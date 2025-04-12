@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="main-container">
+        <!-- Герой-секция -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Профессиональный свидетель на свадьбу</h1>
+                <p class="subtitle">Создам атмосферу настоящего праздника!</p>
+                <a href="contacts" class="cta-button">Забронировать</a>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Свидетель на свадьбе">
+            </div>
+        </section>
+
+        <!-- Блок с услугами -->
+        <section class="service-section">
+            <div class="service-image">
+                <img src="{{ url_for('static', filename='images/service1.jpg') }}" alt="Пример услуги">
+            </div>
+            <div class="service-text">
+                <h2>Что я предлагаю</h2>
+                <ul class="service-list">
+                    <li>✅ Полное погружение в роль вашего друга/родственника</li>
+                    <li>✅ Подготовленные тосты и истории "из прошлого"</li>
+                    <li>✅ Участие во всех свадебных обрядах</li>
+                    <li>✅ Фото и видео с моим участием</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Блок с примером -->
+        <section class="example-section">
+            <div class="example-text">
+                <h2>Как это работает?</h2>
+                <p>Я изучаю вашу историю и создаю правдоподобную легенду о нашем знакомстве. Все гости будут уверены, что мы давно знаем друг друга!</p>
+                <p>Пример легенды: "Мы познакомились в 2015 году на фестивале воздушных змеев, где вместе спасали запутавшегося в нитях пса Барбоса"</p>
+            </div>
+            <div class="example-image">
+                <img src="{{ url_for('static', filename='images/example.jpg') }}" alt="Пример работы">
+            </div>
+        </section>
+        <!-- Новая секция с видео -->
+        <section class="video-section">
+            <h2>Видео с реальной свадьбы</h2>
+            <div class="video-container">
+                <video controls poster="{{ url_for('static', filename='images/Превью.png') }}">
+                    <source src="{{ url_for('static', filename='images/цыганская свадьба.mp4') }}" type="video/mp4">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+            </div>
+            <p class="video-caption">Пример моей работы на свадьбе Веры и Олега</p>
+        </section>
+        <!-- Кнопка CTA -->
+        <section class="cta-section">
+            <h2>Готовы сделать вашу свадьбу незабываемой?</h2>
+            <a href="contacts" class="cta-button">Связаться со мной</a>
+        </section>
+        <br>
+        <br>
+    </div>
+{% endblock %}

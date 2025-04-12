@@ -1,0 +1,239 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #ffeb3b;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Формы */
+input, button {
+    padding: 8px;
+    margin: 5px 0;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* Дополнения к существующим стилям */
+
+/* Стили админки */
+.admin-actions {
+    margin: 20px 0;
+}
+
+.pages-list {
+    list-style: none;
+    padding: 0;
+}
+
+.pages-list li {
+    background: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background: #2196F3;
+}
+
+.btn-delete {
+    background: #f44336;
+}
+
+/* Сообщения */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.flash.success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+/* Основные стили главной страницы */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Секции с чередующимися блоками */
+.hero-section,
+.service-section,
+.example-section {
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    gap: 40px;
+}
+
+.hero-section {
+    min-height: 55vh;
+}
+
+.service-section {
+    flex-direction: row-reverse;
+}
+
+/* Текстовые блоки */
+.hero-text,
+.service-text,
+.example-text {
+    flex: 1;
+}
+
+/* Изображения */
+.hero-image,
+.service-image,
+.example-image {
+    flex: 1;
+}
+
+.hero-image img,
+.service-image img,
+.example-image img {
+    width: 120%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Стили текста */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 20px 0;
+}
+
+.service-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-list li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Кнопки */
+.cta-button {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+}
+/* Стили для видео-секции */
+.video-section {
+    text-align: center;
+    margin: 50px 0;
+    padding: 0 20px;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+.video-caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    font-size: 1.1rem;
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-section,
+    .service-section,
+    .example-section {
+        flex-direction: column;
+    }
+    
+    .service-section {
+        flex-direction: column;
+    }
+}

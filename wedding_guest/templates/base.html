@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }} | Свидетель из Фрязино</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <header>
+        <h1>Профессиональный гость на свадьбу</h1>
+        <nav>
+            <!-- Главная страница с фиксированной ссылкой -->
+             <a href="{{ url_for('index') }}">Главная</a>
+            
+            <!-- Динамические страницы из БД -->
+            {% for page in pages if page.slug not in ['index', 'home'] %}
+                <a href="{{ url_for('page', slug=page.slug) }}">{{ page.title }}</a>
+            {% endfor %}
+            
+            <!-- Ссылки авторизации -->
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('admin_panel') }}" class="admin-link">Админка</a>
+                <a href="{{ url_for('logout') }}">Выйти</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Войти</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>© 2025. Напишите мне: guest@fryazino.ru</footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Создать новую страницу</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="title">Название страницы:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="slug">URL-адрес (латиница):</label>
+            <input type="text" id="slug" name="slug" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Содержимое:</label>
+            <textarea id="content" name="content" rows="10" required></textarea>
+        </div>
+        <button type="submit" class="btn">Создать страницу</button>
+    </form>
+{% endblock %}

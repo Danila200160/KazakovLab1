@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Галерея</h2>
+    <div class="gallery-grid">
+        {% for photo in photos %}
+        <div class="gallery-item">
+            <a href="{{ url_for('static', filename='uploads/gallery/' + photo.filename) }}" data-lightbox="gallery">
+                <img src="{{ url_for('static', filename='uploads/gallery/' + photo.filename) }}" alt="{{ photo.caption }}">
+            </a>
+            {% if photo.caption %}
+            <p class="caption">{{ photo.caption }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
