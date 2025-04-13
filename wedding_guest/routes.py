@@ -45,7 +45,7 @@ def login():
             return redirect(url_for('admin_panel'))  # Перенаправляем в админку
             
         flash('Неверные учетные данные', 'danger')
-    return render_template('login.html')
+    return render_template('login.html', pages=Page.query.all())
 
 # Выход
 @app.route('/logout')
@@ -69,9 +69,9 @@ def create_page():
         db.session.commit()
         flash('Страница успешно создана!', 'success')
         return redirect(url_for('admin_panel'))  # Перенаправляем в админку
-    return render_template('admin/create.html')
+    return render_template('admin/create.html',pages=Page.query.all())
 
-# Редактирование страницы (ДОБАВЛЯЕМ НОВЫЙ МАРШРУТ)
+# Редактирование страницы 
 @app.route('/admin/edit/<int:page_id>', methods=['GET', 'POST'])
 @login_required
 def edit_page(page_id):
@@ -82,10 +82,10 @@ def edit_page(page_id):
         page.content = request.form['content']
         db.session.commit()
         flash('Страница успешно обновлена!', 'success')
-        return redirect(url_for('admin_panel'))
+        return redirect(url_for('admin_panel'))  # Перенаправляем в админку   
     return render_template('admin/edit.html', page=page)
 
-# Удаление страницы (ДОБАВЛЯЕМ НОВЫЙ МАРШРУТ)
+# Удаление страницы 
 @app.route('/admin/delete/<int:page_id>', methods=['POST'])
 @login_required
 def delete_page(page_id):
