@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app               # смонтировать текущую папку внутрь /app
+    ports:
+      - "5000:5000"          # проксируем 5000→5000
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+    # Если хотите использовать gunicorn, можно так:
+    # command: ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
